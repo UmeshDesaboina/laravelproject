@@ -1,0 +1,50 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    
+    --color-primary: #22c55e;
+    --color-primary-hover: #16a34a;
+    --color-secondary: #3b82f6;
+    --color-accent: #f59e0b;
+    --color-danger: #ef4444;
+    --color-success: #22c55e;
+    --color-dark: #111827;
+    --color-dark-lighter: #1f2937;
+    --color-dark-border: #374151;
+}
+
+@layer base {
+    body {
+        @apply antialiased text-gray-900;
+        font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    }
+}
+
+@layer components {
+    .glass {
+        @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+    }
+    
+    .glass-dark {
+        @apply bg-gray-900/80 backdrop-blur-md border border-gray-700/50 shadow-2xl;
+    }
+    
+    .btn-primary {
+        @apply px-6 py-2.5 bg-primary hover:bg-primary-hover text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-primary/20;
+    }
+    
+    .card-hover {
+        @apply transition-all duration-300 hover:shadow-2xl hover:-translate-y-1;
+    }
+}
+
+* {
+    cursor: pointer !important;
+}
